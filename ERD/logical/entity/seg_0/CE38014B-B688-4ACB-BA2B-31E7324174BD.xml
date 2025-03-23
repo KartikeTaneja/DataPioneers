@@ -1,0 +1,91 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Entity class="oracle.dbtools.crest.model.design.logical.Entity" directorySegmentName="seg_0" id="CE38014B-B688-4ACB-BA2B-31E7324174BD" name="Warehouse">
+<createdBy>anandpandey</createdBy>
+<createdTime>2025-02-17 22:27:40 UTC</createdTime>
+<generatorID>65FFC100-A788-BD16-10A1-230F9F3E77E4</generatorID>
+<ownerDesignName>ERD</ownerDesignName>
+<engineerTo>
+<item key="9C699848-0019-45F7-65EE-21E7CAE256CD" value="true"/>
+</engineerTo>
+<adequatelyNormalized>NO</adequatelyNormalized>
+<expectedVolumes>0</expectedVolumes>
+<fwdEngineeringStrategyName>Single Table</fwdEngineeringStrategyName>
+<growthPercent>0</growthPercent>
+<growthType>Year</growthType>
+<maxVolumes>9999999</maxVolumes>
+<minVolumes>0</minVolumes>
+<normalForm>Third</normalForm>
+<attributes itemClass="oracle.dbtools.crest.model.design.logical.Attribute">
+<Attribute name="WarehouseID" id="33B875BC-1C7A-D88B-DB76-DCC67CD814DA">
+<createdBy>anandpandey</createdBy>
+<createdTime>2025-02-17 22:27:40 UTC</createdTime>
+<generatorID>E60D8EAB-2794-0AAF-FD6B-F827955486CF</generatorID>
+<ownerDesignName>ERD</ownerDesignName>
+<engineerTo>
+<item key="9C699848-0019-45F7-65EE-21E7CAE256CD" value="true"/>
+</engineerTo>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="Location" id="640F2E2A-2D69-35E9-855B-19C24DD56588">
+<createdBy>anandpandey</createdBy>
+<createdTime>2025-02-17 22:27:40 UTC</createdTime>
+<generatorID>F5DDF192-71AE-0756-4429-39356822DD1E</generatorID>
+<ownerDesignName>ERD</ownerDesignName>
+<engineerTo>
+<item key="9C699848-0019-45F7-65EE-21E7CAE256CD" value="true"/>
+</engineerTo>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>255 CHAR</dataTypeSize>
+<ownDataTypeParameters>255 CHAR,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="ProductWarehouse ProductID" id="C4EBA024-364C-25AE-A167-49C97F05D639">
+<createdBy>anandpandey</createdBy>
+<createdTime>2025-02-17 22:27:40 UTC</createdTime>
+<generatorID>E26C4C1D-6009-CDA5-E218-0BD572E8EF79</generatorID>
+<ownerDesignName>ERD</ownerDesignName>
+<engineerTo>
+<item key="9C699848-0019-45F7-65EE-21E7CAE256CD" value="true"/>
+</engineerTo>
+<referedAttribute>2D478742-6C8F-39F4-7722-4CD97F99F45B</referedAttribute>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="ProductWarehouse WarehouseID" id="01E574C4-2BB3-A42B-8FB6-9950CEAA0EE0">
+<createdBy>anandpandey</createdBy>
+<createdTime>2025-02-17 22:27:40 UTC</createdTime>
+<generatorID>E26C4C1D-6009-CDA5-E218-0BD572E8EF79</generatorID>
+<ownerDesignName>ERD</ownerDesignName>
+<engineerTo>
+<item key="9C699848-0019-45F7-65EE-21E7CAE256CD" value="true"/>
+</engineerTo>
+<referedAttribute>30EC0B49-C854-1857-2B64-A24FCD2E0076</referedAttribute>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+</attributes>
+<identifiers itemClass="oracle.dbtools.crest.model.design.logical.CandidateKey">
+<identifier id="C3CF474D-BEB9-DE80-B261-2574A3086983" name="Warehouse PK">
+<createdBy>anandpandey</createdBy>
+<createdTime>2025-02-17 22:27:40 UTC</createdTime>
+<generatorID>489898CF-E930-63F9-B95B-6D634CB06331</generatorID>
+<ownerDesignName>ERD</ownerDesignName>
+<engineerTo>
+<item key="9C699848-0019-45F7-65EE-21E7CAE256CD" value="true"/>
+</engineerTo>
+<pk>true</pk>
+<usedAttributes>
+<attributeRef>33B875BC-1C7A-D88B-DB76-DCC67CD814DA</attributeRef>
+</usedAttributes>
+</identifier>
+</identifiers>
+</Entity>
