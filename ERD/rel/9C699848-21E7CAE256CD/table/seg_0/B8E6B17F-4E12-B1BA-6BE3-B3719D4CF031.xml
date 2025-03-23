@@ -1,0 +1,92 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Table class="oracle.dbtools.crest.model.design.relational.Table" directorySegmentName="seg_0" id="B8E6B17F-4E12-B1BA-6BE3-B3719D4CF031" name="ProductWarehouse">
+<createdBy>anandpandey</createdBy>
+<createdTime>2025-02-17 22:02:40 UTC</createdTime>
+<ownerDesignName>ERD</ownerDesignName>
+<ordsAlias>table_18</ordsAlias>
+<allowColumnReorder>false</allowColumnReorder>
+<existDependencyGenerateInDDl>true</existDependencyGenerateInDDl>
+<parsed>true</parsed>
+<columns itemClass="oracle.dbtools.crest.model.design.relational.Column">
+<Column name="ProductID" id="746E4386-B3BB-089F-7BC5-77AE5DAF61B6">
+<createdBy>anandpandey</createdBy>
+<createdTime>2025-02-17 22:04:27 UTC</createdTime>
+<ownerDesignName>ERD</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="WarehouseID" id="27345A0D-569B-961E-733C-B8FA1EC3504A">
+<createdBy>anandpandey</createdBy>
+<createdTime>2025-02-17 22:04:27 UTC</createdTime>
+<ownerDesignName>ERD</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="StockLevel" id="AAD4DE26-8E9E-33F2-FAA9-978DEE28F822">
+<createdBy>anandpandey</createdBy>
+<createdTime>2025-02-17 22:04:27 UTC</createdTime>
+<ownerDesignName>ERD</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="LastUpdated" id="414544B4-E5CE-9751-5FDA-5C4DA4C0F126">
+<createdBy>anandpandey</createdBy>
+<createdTime>2025-02-17 22:04:27 UTC</createdTime>
+<ownerDesignName>ERD</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT015</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="Suppliers_SupplierID" id="BE03BEA2-2AF8-CC77-EF2A-A49F9A29F920">
+<createdBy>anandpandey</createdBy>
+<createdTime>2025-03-23 00:40:24 UTC</createdTime>
+<ownerDesignName>ERD</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<previousColumn>false</previousColumn>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="E0B31F5C-DEB8-51B6-C3EA-B407B81805AC" referredColumn="5E3F7ACF-F851-3E52-0555-BDE888130199"/>
+</associations>
+</Column>
+</columns>
+<indexes itemClass="oracle.dbtools.crest.model.design.relational.Index">
+<ind_PK_UK id="CDC9D37D-2293-E9B5-ECD1-41CAE945F7D4" name="ProductWarehouse_PK">
+<createdBy>anandpandey</createdBy>
+<createdTime>2025-02-17 22:04:27 UTC</createdTime>
+<ownerDesignName>ERD</ownerDesignName>
+<pk>true</pk>
+<indexState>Primary Constraint</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="746E4386-B3BB-089F-7BC5-77AE5DAF61B6"/>
+<colUsage columnID="27345A0D-569B-961E-733C-B8FA1EC3504A"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="D59EDDB4-9BA0-78BA-44C1-A736AE44602C" name="ProductWarehouse_Suppliers_FK">
+<createdBy>anandpandey</createdBy>
+<createdTime>2025-03-23 00:40:24 UTC</createdTime>
+<ownerDesignName>ERD</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="BE03BEA2-2AF8-CC77-EF2A-A49F9A29F920"/>
+</indexColumnUsage>
+</ind_PK_UK>
+</indexes>
+</Table>

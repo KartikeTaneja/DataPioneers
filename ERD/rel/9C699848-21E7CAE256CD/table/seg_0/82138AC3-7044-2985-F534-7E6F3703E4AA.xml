@@ -1,0 +1,129 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Table class="oracle.dbtools.crest.model.design.relational.Table" directorySegmentName="seg_0" id="82138AC3-7044-2985-F534-7E6F3703E4AA" name="OrderDetails">
+<createdBy>anandpandey</createdBy>
+<createdTime>2025-02-17 21:28:04 UTC</createdTime>
+<ownerDesignName>ERD</ownerDesignName>
+<ordsAlias>table_12</ordsAlias>
+<allowColumnReorder>false</allowColumnReorder>
+<existDependencyGenerateInDDl>true</existDependencyGenerateInDDl>
+<parsed>true</parsed>
+<columns itemClass="oracle.dbtools.crest.model.design.relational.Column">
+<Column name="OrderDetailID" id="04412879-9B16-5AD3-B426-86B9E1D6B490">
+<createdBy>anandpandey</createdBy>
+<createdTime>2025-02-17 21:30:14 UTC</createdTime>
+<ownerDesignName>ERD</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="OrderID" id="471839D6-5E23-345C-AFFE-1502BC11A9C4">
+<createdBy>anandpandey</createdBy>
+<createdTime>2025-02-17 21:30:14 UTC</createdTime>
+<ownerDesignName>ERD</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="ProductID" id="63CB04C4-E7D8-A913-6634-139E4B7EC045">
+<createdBy>anandpandey</createdBy>
+<createdTime>2025-02-17 21:30:14 UTC</createdTime>
+<ownerDesignName>ERD</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="Quantity" id="80EC9805-A7C7-DD15-A3EA-B0C91D9E3B89">
+<createdBy>anandpandey</createdBy>
+<createdTime>2025-02-17 21:30:14 UTC</createdTime>
+<ownerDesignName>ERD</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="SubTotal" id="9F5FA2E4-419B-5F8F-5041-DEE8C19FCA2C">
+<createdBy>anandpandey</createdBy>
+<createdTime>2025-02-17 21:30:14 UTC</createdTime>
+<ownerDesignName>ERD</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<dataTypePrecision>10</dataTypePrecision>
+<dataTypeScale>2</dataTypeScale>
+<ownDataTypeParameters>,10,2</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="Products_ProductID" id="14D83759-4350-E5DF-392B-F8627458D646">
+<createdBy>anandpandey</createdBy>
+<createdTime>2025-02-17 21:40:27 UTC</createdTime>
+<ownerDesignName>ERD</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<previousColumn>false</previousColumn>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="A7F7FD3A-8165-A9B5-732E-E6529E3DE290" referredColumn="19C03D5D-392F-1F1D-BB76-384A38D505A2"/>
+</associations>
+</Column>
+<Column name="Orders_OrderID" id="2FB9360E-6968-04FE-2194-2B8917AE93D7">
+<createdBy>anandpandey</createdBy>
+<createdTime>2025-02-17 21:40:53 UTC</createdTime>
+<ownerDesignName>ERD</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<previousColumn>false</previousColumn>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="E8650ED0-7D15-8C6A-13CB-7A82D3673871" referredColumn="6BFC096B-ED4C-8860-6D40-77241CED4A28"/>
+</associations>
+</Column>
+</columns>
+<indexes itemClass="oracle.dbtools.crest.model.design.relational.Index">
+<ind_PK_UK id="DFF7BD77-CE88-856F-70DC-D95FDE6D2155" name="OrderDetails_PK">
+<createdBy>anandpandey</createdBy>
+<createdTime>2025-02-17 21:30:14 UTC</createdTime>
+<ownerDesignName>ERD</ownerDesignName>
+<pk>true</pk>
+<indexState>Primary Constraint</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="04412879-9B16-5AD3-B426-86B9E1D6B490"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="73C25B78-CBE1-93E6-C6A5-E04FEE3A5DDE" name="OrderDetails_Products_FK">
+<createdBy>anandpandey</createdBy>
+<createdTime>2025-02-17 21:40:27 UTC</createdTime>
+<ownerDesignName>ERD</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="14D83759-4350-E5DF-392B-F8627458D646"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="85CE79AE-6054-E929-7928-CC21E121B010" name="OrderDetails_Orders_FK">
+<createdBy>anandpandey</createdBy>
+<createdTime>2025-02-17 21:40:53 UTC</createdTime>
+<ownerDesignName>ERD</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="2FB9360E-6968-04FE-2194-2B8917AE93D7"/>
+</indexColumnUsage>
+</ind_PK_UK>
+</indexes>
+</Table>

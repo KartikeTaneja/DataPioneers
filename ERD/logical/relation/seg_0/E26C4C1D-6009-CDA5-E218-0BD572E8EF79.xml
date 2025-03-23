@@ -1,0 +1,20 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Relation class="oracle.dbtools.crest.model.design.logical.Relation" name="Warehouse_ProductWarehouse_FK" directorySegmentName="seg_0" id="E26C4C1D-6009-CDA5-E218-0BD572E8EF79">
+<createdBy>anandpandey</createdBy>
+<createdTime>2025-02-17 22:27:40 UTC</createdTime>
+<generatorID>EBC19771-3B76-ECF0-EA27-7F43156EE8AC</generatorID>
+<ownerDesignName>ERD</ownerDesignName>
+<engineerTo>
+<item key="9C699848-0019-45F7-65EE-21E7CAE256CD" value="true"/>
+</engineerTo>
+<sourcePk>AAB27BD5-0769-B516-5D93-B3EA509A4611</sourcePk>
+<identifying>false</identifying>
+<optionalSource>true</optionalSource>
+<optionalTarget>false</optionalTarget>
+<sourceCardinality>1</sourceCardinality>
+<sourceEntity>C106A616-2CDF-B5D2-2BA9-C21382FB11F7</sourceEntity>
+<targetCardinalityString>*</targetCardinalityString>
+<targetEntity>CE38014B-B688-4ACB-BA2B-31E7324174BD</targetEntity>
+<transferable>true</transferable>
+<deleteRule>NO ACTION</deleteRule>
+</Relation>

@@ -1,0 +1,106 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Entity class="oracle.dbtools.crest.model.design.logical.Entity" directorySegmentName="seg_0" id="86E7BA3D-0F32-01E8-C537-0EA66F864868" name="Orders">
+<createdBy>anandpandey</createdBy>
+<createdTime>2025-02-17 22:27:39 UTC</createdTime>
+<generatorID>7497FC71-09ED-C666-D475-7C0C85D3A169</generatorID>
+<ownerDesignName>ERD</ownerDesignName>
+<engineerTo>
+<item key="9C699848-0019-45F7-65EE-21E7CAE256CD" value="true"/>
+</engineerTo>
+<adequatelyNormalized>NO</adequatelyNormalized>
+<expectedVolumes>0</expectedVolumes>
+<fwdEngineeringStrategyName>Single Table</fwdEngineeringStrategyName>
+<growthPercent>0</growthPercent>
+<growthType>Year</growthType>
+<maxVolumes>9999999</maxVolumes>
+<minVolumes>0</minVolumes>
+<normalForm>Third</normalForm>
+<attributes itemClass="oracle.dbtools.crest.model.design.logical.Attribute">
+<Attribute name="OrderID" id="14A34897-E4B7-E35E-5580-403280126AAB">
+<createdBy>anandpandey</createdBy>
+<createdTime>2025-02-17 22:27:40 UTC</createdTime>
+<generatorID>6BFC096B-ED4C-8860-6D40-77241CED4A28</generatorID>
+<ownerDesignName>ERD</ownerDesignName>
+<engineerTo>
+<item key="9C699848-0019-45F7-65EE-21E7CAE256CD" value="true"/>
+</engineerTo>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="CustomerID" id="AC33FC2B-50EA-9E1F-7282-1F01C68E7E52">
+<createdBy>anandpandey</createdBy>
+<createdTime>2025-02-17 22:27:40 UTC</createdTime>
+<generatorID>3D3ADE97-8F90-8851-9491-70066090B0DA</generatorID>
+<ownerDesignName>ERD</ownerDesignName>
+<engineerTo>
+<item key="9C699848-0019-45F7-65EE-21E7CAE256CD" value="true"/>
+</engineerTo>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="OrderDate" id="3B8F941D-7DB3-0083-BCAE-79FB0D4F62FC">
+<createdBy>anandpandey</createdBy>
+<createdTime>2025-02-17 22:27:40 UTC</createdTime>
+<generatorID>84DDADA1-213C-DF01-2B91-0735A3A4EFB0</generatorID>
+<ownerDesignName>ERD</ownerDesignName>
+<engineerTo>
+<item key="9C699848-0019-45F7-65EE-21E7CAE256CD" value="true"/>
+</engineerTo>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT015</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="TotalAmount" id="4F427D64-0CE7-7823-5836-913E0B53D453">
+<createdBy>anandpandey</createdBy>
+<createdTime>2025-02-17 22:27:40 UTC</createdTime>
+<generatorID>FA01C80A-02D0-FFC4-A353-72CEF1BCBA55</generatorID>
+<ownerDesignName>ERD</ownerDesignName>
+<engineerTo>
+<item key="9C699848-0019-45F7-65EE-21E7CAE256CD" value="true"/>
+</engineerTo>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<dataTypePrecision>10</dataTypePrecision>
+<dataTypeScale>2</dataTypeScale>
+<ownDataTypeParameters>,10,2</ownDataTypeParameters>
+</Attribute>
+<Attribute name="Customers Customers ID" id="2CC93596-FEF4-EB4A-7264-F98827717B85">
+<createdBy>anandpandey</createdBy>
+<createdTime>2025-02-17 22:27:40 UTC</createdTime>
+<generatorID>A358B9C9-7809-744E-E327-E5B40C0E1F13</generatorID>
+<ownerDesignName>ERD</ownerDesignName>
+<engineerTo>
+<item key="9C699848-0019-45F7-65EE-21E7CAE256CD" value="true"/>
+</engineerTo>
+<referedAttribute>47610BA7-1166-29E9-5FED-98C8E0D503EA</referedAttribute>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+</attributes>
+<identifiers itemClass="oracle.dbtools.crest.model.design.logical.CandidateKey">
+<identifier id="8F6E2085-F824-C591-EFF2-D7547CFB7183" name="Orders PK">
+<createdBy>anandpandey</createdBy>
+<createdTime>2025-02-17 22:27:40 UTC</createdTime>
+<generatorID>F1C29890-5E5B-BDEB-5850-9B13E543AC10</generatorID>
+<ownerDesignName>ERD</ownerDesignName>
+<engineerTo>
+<item key="9C699848-0019-45F7-65EE-21E7CAE256CD" value="true"/>
+</engineerTo>
+<pk>true</pk>
+<usedAttributes>
+<attributeRef>14A34897-E4B7-E35E-5580-403280126AAB</attributeRef>
+</usedAttributes>
+</identifier>
+</identifiers>
+</Entity>
