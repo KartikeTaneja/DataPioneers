@@ -60,6 +60,8 @@ CREATE TABLE Orders (
     CustomerID NUMBER NOT NULL,
     OrderDate TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
     TotalAmount NUMBER(10,2) NOT NULL CHECK (TotalAmount > 0),
+    OrderStatus VARCHAR2(20) DEFAULT 'Pending'
+        CHECK (OrderStatus IN ('Pending', 'Fulfilled', 'Backordered')),
     CONSTRAINT Orders_Customers_FK FOREIGN KEY (CustomerID) REFERENCES Customers(Customers_ID)
 );
 
