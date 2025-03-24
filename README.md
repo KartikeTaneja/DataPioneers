@@ -6,11 +6,10 @@ This project demonstrates a normalized SQL-based inventory system with support f
 
 All SQL scripts are stored in the DataPioneers_Scripts/ directory.
 
-### **Run Initial Setup**
 
 **Always connect and run scripts as data_pioneers_admin (admin)**
 
-- 1. **Run User Setup**
+- **Step 1:Run User Setup**
 
         Run: DataPioneers_SetUp.sql
 
@@ -20,27 +19,27 @@ This script creates the two user `data_pioneers_admin` and `data_pioneers`:
 
 
 
-- 2. **Run Validated Schema Script Login as data_pioneers_admin**
+- **Step 2: Run Validated Schema Script Login as data_pioneers_admin**
 
         Run: DataPioneers_Validated_Schema.sql
 
 This script creates all tables, constraints, foreign keys, and views as per the final ER diagram.
 
 
-- 3. **Run Insert Sample Data Login as data_pioneers_admin**
+- **Step 3:Run Insert Sample Data Login as data_pioneers_admin**
 
        Run: DataPioneers_SampleData.sql
 
 Populates all tables with realistic data and can be re-run multiple times (it clears old data first).
 
-- 4. **Test as data_pioneers (read-only user):**
+- **Setp 4:Test as data_pioneers (read-only user):**
 - After executing all scripts as admin, log in as:
 
             Username: data_pioneers
             Password: User@123456789
 
 
-        Run this script: data_pioneers.sql
+    Run this script: data_pioneers.sql
 
 **Note:** Any INSERT, UPDATE, or DELETE will fail for this user due to read-only access.
 
