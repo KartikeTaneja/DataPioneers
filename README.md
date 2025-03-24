@@ -32,7 +32,7 @@ This script creates all tables, constraints, foreign keys, and views as per the 
 
 Populates all tables with realistic data and can be re-run multiple times (it clears old data first).
 
-- **Setp 4:Test as data_pioneers (read-only user):**
+- **Step 4:Test as data_pioneers (read-only user):**
 - After executing all scripts as admin, log in as:
 
             Username: data_pioneers
@@ -65,18 +65,18 @@ Populates all tables with realistic data and can be re-run multiple times (it cl
 
 ## Normalization Justification
 
-- 1NF – First Normal Form  
-All attributes are atomic (no multi-valued or composite fields).  
-Each table has a clear PK.  
-Example: Products.Name and Category are simple and atomic.
+- **1NF – First Normal Form**  
+    - All attributes are atomic (no multi-valued or composite fields).  
+    - Each table has a clear PK.  
+    - Example: Products.Name and Category are simple and atomic.
 
-- 2NF – Second Normal Form  
-No partial dependencies.  
-Composite PKs (e.g., ProductWarehouse) are used correctly.  
-Non-key attributes are fully dependent on entire PK.
+- **2NF – Second Normal Form**  
+    - No partial dependencies.  
+    - Composite PKs (e.g., ProductWarehouse) are used correctly.  
+    - Non-key attributes are fully dependent on entire PK.
 
-- 3NF – Third Normal Form  
-No transitive dependencies.  
-All non-key attributes depend only on the primary key.
+- **3NF – Third Normal Form**  
+    - No transitive dependencies.  
+    - All non-key attributes depend only on the primary key.
 
 - **All entities conform to 1NF, 2NF, and 3NF.**
