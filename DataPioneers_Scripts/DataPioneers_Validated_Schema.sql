@@ -18,7 +18,7 @@ BEGIN EXECUTE IMMEDIATE 'DROP VIEW Current_Inventory_Status'; EXCEPTION WHEN OTH
 /
 BEGIN EXECUTE IMMEDIATE 'DROP VIEW Product_Wise_Price_Changes'; EXCEPTION WHEN OTHERS THEN NULL; END;
 /
-BEGIN EXECUTE IMMEDIATE 'DROP VIEW Total_Sales_Region_Wise'; EXCEPTION WHEN OTHERS THEN NULL; END;
+BEGIN EXECUTE IMMEDIATE 'DROP VIEW Total_Sales_By_Customer'; EXCEPTION WHEN OTHERS THEN NULL; END;
 /
 BEGIN EXECUTE IMMEDIATE 'DROP VIEW Week_Wise_Sales'; EXCEPTION WHEN OTHERS THEN NULL; END;
 /
@@ -103,10 +103,15 @@ SELECT ProductID, Name, StockQuantity FROM Products;
 CREATE VIEW Product_Wise_Price_Changes AS
 SELECT ProductID, Name, Price, CreatedAt, UpdatedAt FROM Products;
 
-CREATE VIEW Total_Sales_Region_Wise AS
-SELECT O.OrderID, C.FirstName, C.LastName, O.TotalAmount
-FROM Orders O
-JOIN Customers C ON O.CustomerID = C.Customers_ID;
+
+CREATE VIEW Total_Sales_By_Customer AS
+SELECT C.Customers_ID, C.FirstName, C.LastName,
+SUM(O.TotalAmount) AS Total_Spent 
+FROM Customers C
+JOIN Orders O ON C.Customers_ID = O.CustomerID
+GROUP BY C.Customers_ID, C.FirstName, C.LastName
+ORDER BY Total_Spent DESC;
+    
 
 CREATE VIEW Week_Wise_Sales AS
 SELECT TRUNC(OrderDate, 'IW') AS Week_Start, SUM(TotalAmount) AS Weekly_Sales
