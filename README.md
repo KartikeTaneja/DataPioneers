@@ -4,49 +4,61 @@ This project demonstrates a normalized SQL-based inventory system with support f
 
 ## Execution Flow
 
+All SQL scripts are stored in the DataPioneers_Scripts/ directory.
+
 ### **Run Initial Setup**
 
-- 1. **Run Initial Setup**
+**Always connect and run scripts as data_pioneers_admin (admin)**
+
+- 1. **Run User Setup**
 
         Run: DataPioneers_SetUp.sql
 
-This script creates the user `data_pioneers`, grants all necessary permissions, and assigns unlimited quota.
+This script creates the two user `data_pioneers_admin` and `data_pioneers`:
+- `data_pioneers_admin` is the admin user with full privileges.
+- `data_pioneers` is the regular user with limited privileges(read-only access).
 
-- 2. **Run Validated Schema Script**
+
+
+- 2. **Run Validated Schema Script Login as data_pioneers_admin**
 
         Run: DataPioneers_Validated_Schema.sql
 
 This script creates all tables, constraints, foreign keys, and views as per the final ER diagram.
 
 
-- 3. **Insert Sample Data**
+- 3. **Run Insert Sample Data Login as data_pioneers_admin**
 
        Run: DataPioneers_SampleData.sql
 
 Populates all tables with realistic data and can be re-run multiple times (it clears old data first).
 
-- 4. **Backorder Logic + Test**
+- 4. **Test as data_pioneers (read-only user):**
+- After executing all scripts as admin, log in as:
 
-        Run: DataPioneers_Test_Backorder.sql
+            Username: data_pioneers
+            Password: User@123456789
 
-This script:
-- Creates a stored procedure `fulfill_backorders`
-- Simulates a backorder
-- Updates stock
-- Shows how the order gets fulfilled automatically
+
+        Run this script: data_pioneers.sql
+
+**Note:** Any INSERT, UPDATE, or DELETE will fail for this user due to read-only access.
+
 
 ## Features Demonstrated
 
 - Fully normalized schema with ERD and relational mappings
+
 - Business rule constraints:
   - Quantity > 0
   - Valid phone/email
   - Unique customer emails
   - Auto-fulfillment logic
+
+
 - Views:
   - `Current_Inventory_Status`
   - `Product_Wise_Price_Changes`
-  - `Total_Sales_Region_Wise`
+  - `Total_Sales_By_Customer`
   - `Week_Wise_Sales`
-- Auto-order logic via stored procedure when stock is replenished
 - All scripts are re-runnable and have exception-safe logic
