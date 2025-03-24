@@ -78,5 +78,27 @@ SELECT * FROM ProductWarehouse;
 
 SELECT * FROM Current_Inventory_Status;
 SELECT * FROM Product_Wise_Price_Changes;
-SELECT * FROM Total_Sales_Region_Wise;
+SELECT * FROM Total_Sales_By_Customer;
 SELECT * FROM Week_Wise_Sales;
+
+
+
+-- NOTE: Run this block **AFTER** schema and views are created by admin
+
+-- Grants SELECT on all tables and views from admin to user
+BEGIN
+  FOR t IN (
+    SELECT table_name FROM all_tables 
+    WHERE owner = 'DATA_PIONEERS_ADMIN' AND IOT_TYPE IS NULL
+  ) LOOP
+    EXECUTE IMMEDIATE 'GRANT SELECT ON data_pioneers_admin.' || t.table_name || ' TO data_pioneers';
+  END LOOP;
+
+  FOR v IN (
+    SELECT view_name FROM all_views 
+    WHERE owner = 'DATA_PIONEERS_ADMIN'
+  ) LOOP
+    EXECUTE IMMEDIATE 'GRANT SELECT ON data_pioneers_admin.' || v.view_name || ' TO data_pioneers';
+  END LOOP;
+END;
+/
