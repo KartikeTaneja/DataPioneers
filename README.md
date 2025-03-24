@@ -61,3 +61,22 @@ Populates all tables with realistic data and can be re-run multiple times (it cl
   - `Total_Sales_By_Customer`
   - `Week_Wise_Sales`
 - All scripts are re-runnable and have exception-safe logic
+
+
+## Normalization Justification
+
+- 1NF – First Normal Form  
+All attributes are atomic (no multi-valued or composite fields).  
+Each table has a clear PK.  
+Example: Products.Name and Category are simple and atomic.
+
+- 2NF – Second Normal Form  
+No partial dependencies.  
+Composite PKs (e.g., ProductWarehouse) are used correctly.  
+Non-key attributes are fully dependent on entire PK.
+
+- 3NF – Third Normal Form  
+No transitive dependencies.  
+All non-key attributes depend only on the primary key.
+
+- **All entities conform to 1NF, 2NF, and 3NF.**
