@@ -4,7 +4,7 @@ This project demonstrates a normalized SQL-based inventory system with support f
 
 ## Execution Flow
 
-All SQL scripts are stored in the DataPioneers_Scripts/ directory.
+All SQL scripts are stored in the Automation_Scripts/ directory.
 
 
 **Always connect and run scripts as data_pioneers_admin (admin)**
