@@ -120,3 +120,16 @@ GROUP BY TRUNC(OrderDate, 'IW')
 ORDER BY Week_Start DESC;
 
 
+-- ========================
+-- Performance Indexes
+-- ========================
+
+-- Optimize JOINs
+CREATE INDEX idx_orders_customerid ON Orders(CustomerID);
+CREATE INDEX idx_orderdetails_orderid ON OrderDetails(OrderID);
+CREATE INDEX idx_orderdetails_productid ON OrderDetails(ProductID);
+
+-- Optimize filtering by status
+CREATE INDEX idx_orders_status ON Orders(OrderStatus);
+
+
