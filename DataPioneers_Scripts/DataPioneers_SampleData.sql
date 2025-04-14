@@ -19,6 +19,8 @@ INSERT INTO Customers VALUES (7, 'Sohan', 'Shinde', 'sohan.shinde@example.com', 
 INSERT INTO Customers VALUES (8, 'Anand', 'Pandey', 'anand.pandey@example.com', '1234500008', CURRENT_TIMESTAMP);
 INSERT INTO Customers VALUES (9, 'Amruta', 'Naik', 'amruta.naik@example.com', '1234500009', CURRENT_TIMESTAMP);
 INSERT INTO Customers VALUES (10, 'Kartik', 'Taneja', 'kartik.taneja@example.com', '1234500010', CURRENT_TIMESTAMP);
+INSERT INTO Customers VALUES (11, 'Riya', 'Sen', 'riya.sen@example.com', '1234500011', CURRENT_TIMESTAMP);
+INSERT INTO Customers VALUES (12, 'Vikram', 'Deshmukh', 'vikram.d@example.com', '1234500012', CURRENT_TIMESTAMP);
 
 -- Insert Suppliers
 INSERT INTO Suppliers VALUES (101, 'Fresh Farms', 'David Jones', '1122334455');
@@ -36,12 +38,16 @@ INSERT INTO Products VALUES (1003, 'Bread', 'Perishable', 1.99, 100, 103, CURREN
 INSERT INTO Products VALUES (1004, 'Smartphone', 'Electronics', 699.99, 30, 106, CURRENT_TIMESTAMP, CURRENT_TIMESTAMP);
 INSERT INTO Products VALUES (1005, 'Rice', 'Grocery', 15.00, 80, 104, CURRENT_TIMESTAMP, CURRENT_TIMESTAMP);
 INSERT INTO Products VALUES (1006, 'Washing Machine', 'Appliances', 449.50, 10, 107, CURRENT_TIMESTAMP, CURRENT_TIMESTAMP);
+INSERT INTO Products VALUES (1007, 'Coffee Maker', 'Appliances', 89.99, 25, 102, CURRENT_TIMESTAMP, CURRENT_TIMESTAMP);
+INSERT INTO Products VALUES (1008, 'Oats', 'Grocery', 6.49, 75, 105, CURRENT_TIMESTAMP, CURRENT_TIMESTAMP);
 
 -- Insert Orders
 INSERT INTO Orders VALUES (201, 3, CURRENT_TIMESTAMP, 5.98, 'Fulfilled');
 INSERT INTO Orders VALUES (202, 5, CURRENT_TIMESTAMP, 999.99, 'Fulfilled');
 INSERT INTO Orders VALUES (203, 6, CURRENT_TIMESTAMP, 31.98, 'Fulfilled');
 INSERT INTO Orders VALUES (204, 8, CURRENT_TIMESTAMP, 1349.49, 'Fulfilled');
+INSERT INTO Orders VALUES (205, 9, CURRENT_TIMESTAMP, 179.98, 'Fulfilled');
+INSERT INTO Orders VALUES (206, 10, CURRENT_TIMESTAMP, 2999.00, 'Backordered'); -- intentionally high quantity
 
 -- Insert OrderDetails
 INSERT INTO OrderDetails VALUES (301, 201, 1001, 2, 5.98);
@@ -50,6 +56,9 @@ INSERT INTO OrderDetails VALUES (303, 203, 1003, 2, 3.98);
 INSERT INTO OrderDetails VALUES (304, 203, 1005, 1, 15.00);
 INSERT INTO OrderDetails VALUES (305, 204, 1004, 1, 699.99);
 INSERT INTO OrderDetails VALUES (306, 204, 1006, 1, 449.50);
+INSERT INTO OrderDetails VALUES (307, 205, 1003, 2, 3.98);
+INSERT INTO OrderDetails VALUES (308, 205, 1005, 1, 15.00);
+INSERT INTO OrderDetails VALUES (309, 206, 1001, 1000, 2999.00); -- backordered
 
 -- Insert Warehouses
 INSERT INTO Warehouse VALUES (401, 'New York Central');
@@ -63,11 +72,10 @@ INSERT INTO ProductWarehouse VALUES (1003, 401, 60, CURRENT_TIMESTAMP, 103);
 INSERT INTO ProductWarehouse VALUES (1004, 403, 20, CURRENT_TIMESTAMP, 106);
 INSERT INTO ProductWarehouse VALUES (1005, 402, 40, CURRENT_TIMESTAMP, 104);
 INSERT INTO ProductWarehouse VALUES (1006, 403, 10, CURRENT_TIMESTAMP, 107);
+INSERT INTO ProductWarehouse VALUES (1007, 402, 30, CURRENT_TIMESTAMP, 102);
+INSERT INTO ProductWarehouse VALUES (1008, 401, 60, CURRENT_TIMESTAMP, 105);
 
-
-
--- Verify
-
+-- Verify Tables and Views
 SELECT * FROM Customers;
 SELECT * FROM Suppliers;
 SELECT * FROM Products;
@@ -81,11 +89,7 @@ SELECT * FROM Product_Wise_Price_Changes;
 SELECT * FROM Total_Sales_By_Customer;
 SELECT * FROM Week_Wise_Sales;
 
-
-
--- NOTE: Run this block **AFTER** schema and views are created by admin
-
--- Grants SELECT on all tables and views from admin to user
+-- Grant SELECT on all tables and views to read-only user
 BEGIN
   FOR t IN (
     SELECT table_name FROM all_tables 
@@ -101,4 +105,3 @@ BEGIN
     EXECUTE IMMEDIATE 'GRANT SELECT ON data_pioneers_admin.' || v.view_name || ' TO data_pioneers';
   END LOOP;
 END;
-/
