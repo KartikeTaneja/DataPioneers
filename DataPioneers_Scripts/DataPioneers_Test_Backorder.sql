@@ -23,35 +23,18 @@ BEGIN
 END;
 /
 
--- STEP 2: Simulate stock replenishment and process backorders
 
--- Clear test data
-DELETE FROM OrderDetails WHERE OrderDetailID = 401;
-DELETE FROM Orders WHERE OrderID = 305;
+-- Step 1: Replenish stock for Product 1001 so the backorder can be fulfilled
+UPDATE Products SET StockQuantity = 1000 WHERE ProductID = 1001;
 
--- Step 1: Make product 1003 out of stock
-UPDATE Products SET StockQuantity = 0 WHERE ProductID = 1003;
-
--- Step 2: Add a new backordered order
-INSERT INTO Orders (OrderID, CustomerID, OrderDate, TotalAmount, OrderStatus)
-VALUES (305, 1, CURRENT_TIMESTAMP, 3.98, 'Backordered');
-
-INSERT INTO OrderDetails (OrderDetailID, OrderID, ProductID, Quantity, SubTotal)
-VALUES (401, 305, 1003, 2, 3.98);
-
--- Step 3: Confirm it's backordered
-SELECT 'Step 3: Before Fulfillment' AS Step, OrderID, CustomerID, TotalAmount, OrderStatus
-FROM Orders WHERE OrderID = 305;
-
--- Step 4: Replenish stock and call procedure to auto-fulfill
-UPDATE Products SET StockQuantity = 10 WHERE ProductID = 1003;
-EXEC fulfill_backorders(1003);
+-- Step 2: Run the procedure to fulfill backorders
+EXEC fulfill_backorders(1001);
 COMMIT;
 
--- Step 5: Confirm the order is now fulfilled
-SELECT 'Step 5: After Fulfillment' AS Step, OrderID, CustomerID, TotalAmount, OrderStatus
-FROM Orders WHERE OrderID = 305;
+-- Step 3: Verify that Order 206 is now fulfilled
+SELECT 'Order Status Check' AS Step, OrderID, OrderStatus 
+FROM Orders WHERE OrderID = 206;
 
--- Step 6: Confirm product stock is reduced
-SELECT 'Step 6: Product Stock After Fulfillment' AS Step, ProductID, StockQuantity 
-FROM Products WHERE ProductID = 1003;
+-- Step 4: Confirm stock reduced properly
+SELECT 'Stock After Fulfillment' AS Step, ProductID, StockQuantity 
+FROM Products WHERE ProductID = 1001;
